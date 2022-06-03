@@ -3,4 +3,11 @@
     <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter password</string>
     <string name="Sign_up">Don\'t have an account <u>Sign up</u></string>
+    <string name="firstname">FirstName</string>
+    <string name="lastname">LastName</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">SignUp</string>
+    <string name="login"><u>Login</u></string>
 </resources>
