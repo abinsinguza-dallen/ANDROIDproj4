@@ -97,7 +97,8 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword">
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etConfirm"
@@ -143,36 +144,33 @@
 
     <ImageView
         android:id="@+id/imgLastName"
-        android:layout_width="19dp"
-        android:layout_height="0dp"
+        android:layout_width="22dp"
+        android:layout_height="93dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="41dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="@+id/tilLastName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilFirstName"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/imgfirstName"
         app:srcCompat="@drawable/ic_baseline_contact_page_24" />
 
     <ImageView
         android:id="@+id/imgEmail"
-        android:layout_width="26dp"
-        android:layout_height="27dp"
+        android:layout_width="24dp"
+        android:layout_height="31dp"
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/tilEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilLastName"
-        app:layout_constraintVertical_bias="0.714"
+        app:layout_constraintTop_toTopOf="@+id/tilEmail"
         app:srcCompat="@drawable/ic_baseline_email_24" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="34dp"
-        android:layout_height="30dp"
+        android:layout_width="29dp"
+        android:layout_height="27dp"
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmail"
-        app:layout_constraintVertical_bias="0.826"
+        app:layout_constraintTop_toTopOf="@+id/tilPassword"
         app:srcCompat="@drawable/ic_baseline_lock_24" />
 
     <ImageView

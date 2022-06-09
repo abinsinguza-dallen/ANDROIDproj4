@@ -40,7 +40,6 @@ class LoginActivity : AppCompatActivity() {
             error=true
         }
 
-
         var password=etPassword.text.toString()
         if (password.isBlank()){
             tilPassword.error="Password is required"
