@@ -7,7 +7,7 @@
     tools:context=".SignupActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilFirstName"
+        android:id="@+id/tilFirstname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilLastName"
+        android:id="@+id/tilLastname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilFirstName">
+        app:layout_constraintTop_toBottomOf="@+id/tilFirstname">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etLastname"
@@ -56,7 +56,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilLastName">
+        app:layout_constraintTop_toBottomOf="@+id/tilLastname">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
@@ -137,9 +137,9 @@
         android:layout_width="24dp"
         android:layout_height="29dp"
         android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tilFirstName"
+        app:layout_constraintBottom_toBottomOf="@+id/tilFirstname"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tilFirstName"
+        app:layout_constraintTop_toTopOf="@+id/tilFirstname"
         app:srcCompat="@drawable/ic_baseline_contact_page_24" />
 
     <ImageView
