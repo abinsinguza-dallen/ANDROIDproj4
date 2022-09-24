@@ -1,10 +1,11 @@
-package com.dallen.workoutlog
+package com.dallen.workoutlog.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.dallen.workoutlog.R
 
 
 class ProfileFragment : Fragment() {

@@ -1,15 +1,19 @@
-package com.dallen.workoutlog
+package com.dallen.workoutlog.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Button
-import android.widget.TextView
-import com.dallen.workoutlog.databinding.ActivityLoginBinding
+import android.widget.Toast
+import com.dallen.workoutlog.ApiClient
+import com.dallen.workoutlog.api.apiInterface
 import com.dallen.workoutlog.databinding.ActivitySignupBinding
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import com.dallen.workoutlog.models.RegesterResponse
+import com.dallen.workoutlog.models.RegisterRequest
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class SignupActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignupBinding
@@ -18,14 +22,22 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        castViews()
 
         binding.tvLogin.setOnClickListener { validation()}
+
         binding.btnSignUp.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            validation()
+
+        }
+    }
+    fun castViews(){
+        binding.btnSignUp.setOnClickListener { validation() }
+        binding.btnSignUp.setOnClickListener {
+            val intent=Intent(this, LoginActivity:: class.java)
             startActivity(intent)
         }
     }
-
 
         fun validation() {
             var error = false
@@ -70,8 +82,40 @@ class SignupActivity : AppCompatActivity() {
 
             }
             if (error != true) {
+                val registerRequest=RegisterRequest(firstName,lastName,password,Confirm,Email)
+                makeRegeister(registerRequest)
+                startActivity(Intent(this,LoginActivity::class.java))
+
             }
 
-        }}
+        }
+    fun makeRegeister(registerRequest: RegisterRequest){
+        var  apiClient= ApiClient.buildApiClient(apiInterface::class.java)
+        val request= apiClient.registerUser(registerRequest)
+
+        request.enqueue(object : Callback<RegesterResponse> {
+            override fun onResponse(
+                call: Call<RegesterResponse>, response: Response<RegesterResponse>
+            ) {
+                if (response.isSuccessful){
+                    Toast.makeText(baseContext,response.body()?.message, Toast.LENGTH_LONG).show()
+
+                }
+                else {
+                    val error=response.errorBody()?.string()
+                    Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()
+//                    startActivity(Intent(baseContext,LoginActivity::class.java))
+
+                }
+            }
+
+            override fun onFailure(call: Call<RegesterResponse>, t: Throwable) {
+                Toast .makeText(baseContext,t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
+}
 
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/myimg2"
-    tools:context=".TrackFragment">
+    tools:context=".ui.TrackFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -15,7 +15,7 @@
 
 <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/fragmentContainerView"-->
-<!--        android:name="com.dallen.workoutlog.TrackFragment"-->
+<!--        android:name="com.dallen.workoutlog.ui.TrackFragment"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content" />-->
 
